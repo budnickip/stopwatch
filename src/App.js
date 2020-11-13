@@ -27,18 +27,22 @@ function App() {
   }
 
   const breakIncrement = () =>{
-    setBreakLength(breakLength+1)
+    if(breakLength < 60){
+      setBreakLength(breakLength+1)
+    }
   }
 
   const sessionDecrement = () => {
-    if(sessionLength > 0){
+    if(sessionLength > 1){
       setSessionLength(sessionLength-1)
     }
     setTimer(sessionLength*60)
   }
 
   const sessionIncrement = () =>{
-    setSessionLength(sessionLength+1)
+    if(sessionLength < 60){
+      setSessionLength(sessionLength+1)
+    }
     setTimer(sessionLength*60)
   }
   return (
