@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.scss';
 
 function App() {
+  const [breakLength, setBreakLength] = useState(5)
+  const [sessionLength, setSessionLength] = useState(25)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="break-label">
+        <p>Break Length</p>
+        <button id="break-decrement">-</button>
+        <p id="break-length">{breakLength}</p>
+        <button id="break-increment">+</button>
+      </div>
+      <div id="session-label">
+        <p>Session Length</p>
+        <button id="session-decrement">-</button>
+        <p id="session-length">{sessionLength}</p>
+        <button id="session-increment">+</button>
+      </div>
     </div>
   );
 }
