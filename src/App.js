@@ -13,19 +13,42 @@ function App() {
     seconds = seconds < 10 ? '0' + seconds : seconds
     return minutes + ':' + seconds;
   }
+
+  const reset = () =>{
+    setBreakLength(5)
+    setSessionLength(25)
+  }
+
+  const breakDecrement = () =>{
+    setBreakLength(breakLength-1)
+  }
+
+  const breakIncrement = () =>{
+    setBreakLength(breakLength+1)
+  }
+
+  const sessionDecrement = () => {
+    setSessionLength(sessionLength-1)
+    setTimer(sessionLength*60)
+  }
+
+  const sessionIncrement = () =>{
+    setSessionLength(sessionLength+1)
+    setTimer(sessionLength*60)
+  }
   return (
     <div className="App">
       <div id="break-label">
         <p>Break Length</p>
-        <button id="break-decrement">-</button>
+        <button id="break-decrement" onClick={breakDecrement}>-</button>
         <p id="break-length">{breakLength}</p>
-        <button id="break-increment">+</button>
+        <button id="break-increment" onClick={breakIncrement}>+</button>
       </div>
       <div id="session-label">
         <p>Session Length</p>
-        <button id="session-decrement">-</button>
+        <button id="session-decrement" onClick={sessionDecrement}>-</button>
         <p id="session-length">{sessionLength}</p>
-        <button id="session-increment">+</button>
+        <button id="session-increment" onClick={sessionIncrement}>+</button>
       </div>
       <div className="timer">
         <div id="timer-label">
@@ -35,7 +58,7 @@ function App() {
             {showTime()}
         </div>
         <button id="start_stop">Start_Stop</button>
-        <button id="reset">reset</button>
+        <button id="reset" onClick={reset}>reset</button>
       </div>
 
     </div>
