@@ -18,6 +18,10 @@ function App() {
         <p id="session-length">{sessionLength}</p>
         <button id="session-increment">+</button>
       </div>
+      <div id="timer-label">
+        <p>Session</p>
+        
+      </div>
     </div>
   );
 }
