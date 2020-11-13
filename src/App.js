@@ -17,10 +17,13 @@ function App() {
   const reset = () =>{
     setBreakLength(5)
     setSessionLength(25)
+    setTimer(sessionLength*60)
   }
 
   const breakDecrement = () =>{
-    setBreakLength(breakLength-1)
+    if(breakLength > 1){
+      setBreakLength(breakLength-1)
+    }
   }
 
   const breakIncrement = () =>{
@@ -28,7 +31,9 @@ function App() {
   }
 
   const sessionDecrement = () => {
-    setSessionLength(sessionLength-1)
+    if(sessionLength > 0){
+      setSessionLength(sessionLength-1)
+    }
     setTimer(sessionLength*60)
   }
 
