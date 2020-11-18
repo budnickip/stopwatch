@@ -5,19 +5,8 @@ function App() {
   const [breakLength, setBreakLength] = useState(5)
   const [sessionLength, setSessionLength] = useState(25)
   const [timer, setTimer] = useState(sessionLength*60)
-  const [minutes, setMinutes] = useState(25)
-  const [seconds, setSeconds] = useState(0)
+  const [start, setStart] = useState(false)
 
-  const updateTime = () =>{
-    setMinutes(Math.floor(timer/60))
-    setSeconds(timer - minutes *60);
-    if(minutes < 10){
-      setMinutes('0'+minutes)
-    }
-    if(seconds < 10){
-      setSeconds('0'+seconds)
-    }
-  }
 
   const showTime = () =>{
     let minutes = Math.floor(timer/60);
@@ -68,6 +57,20 @@ function App() {
   useEffect(()=>{
       setTimer(sessionLength*60)
   }, [sessionLength])
+
+  const handleStart = () => {
+    setStart(!start)
+  }
+
+  useEffect(() => {
+    if(start){
+      const interval = setInterval(() => {
+        setTimer(timer => timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [start]);
+
   return (
     <div className="App">
       <div id="break-label">
@@ -89,7 +92,7 @@ function App() {
         <div id="time-left">
             {showTime()}
         </div>
-        <button id="start_stop">Start_Stop</button>
+        <button id="start_stop" onClick={handleStart}>Start_Stop</button>
         <button id="reset" onClick={reset}>reset</button>
       </div>
 
