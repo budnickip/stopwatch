@@ -5,6 +5,7 @@ function App() {
   const [breakLength, setBreakLength] = useState(5)
   const [sessionLength, setSessionLength] = useState(25)
   const [timer, setTimer] = useState(sessionLength*60)
+  const [breakTime, setBreakTime] = useState(breakLength*60)
   const [start, setStart] = useState(false)
 
 
@@ -65,11 +66,16 @@ function App() {
   useEffect(() => {
     if(start){
       const interval = setInterval(() => {
-        setTimer(timer => timer - 1);
+       // setTimer(timer => timer - 1);
+        if(timer>0){
+          setTimer(timer => timer - 1);
+        }else{
+          clearInterval(interval)
+        }
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [start]);
+  }, [start, timer]);
 
   return (
     <div className="App">
@@ -87,7 +93,7 @@ function App() {
       </div>
       <div className="timer">
         <div id="timer-label">
-          <p>Session</p>
+          <p>{timer>0 ? 'Session' : 'Break'}</p>
         </div>
         <div id="time-left">
             {showTime()}
