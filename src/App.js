@@ -22,6 +22,7 @@ function App() {
     setSessionLength(25)
     setTimer(sessionLength*60)
     setStart(false)
+    setBreakTime(false)
   }
 
 
