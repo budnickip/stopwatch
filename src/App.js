@@ -1,13 +1,42 @@
-import { useEffect, useState } from 'react';
 import './App.scss';
+import React from "react"
 import Timer from './containers/Timer'
+//import StopWatch from './containers/StopWatch'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Timer />
+        <Router>
+          <div>
+          <Link to="/">Timer</Link>
+          <Link to="/stopwatch">Stoper</Link>
+          <Switch>
+            <Route path="/stopwatch">
+              <StopWatch />
+            </Route>
+            <Route path="/">
+              <Timer />
+            </Route>
+          </Switch>
+          </div>
+        </Router>
+      
     </div>
   );
+}
+
+function StopWatch() {
+  return(
+      <div className="stop-watch">
+          Tutaj będzie stoper
+      </div>
+  )
 }
 
 export default App;
