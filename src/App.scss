@@ -7,7 +7,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.header{
+.timer-header{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -46,10 +46,7 @@
     }
 }
 
-.timer{
-    &__paragraph{
-        font-weight: 700;
-    }
+.session{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -60,6 +57,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    &__paragraph{
+        font-weight: 700;
+    }
 }
 
 .time-left{
