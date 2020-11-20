@@ -1,0 +1,48 @@
+.App{
+    width: 500px;
+    background-color: #7f8fa6;
+    color: #192a56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.break-label{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 1;
+    &__paragraph{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+    }
+}
+
+.session-label{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 1;
+    &__paragraph{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+    }
+}

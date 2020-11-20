@@ -113,17 +113,22 @@ function App() {
 
   return (
     <div className="App">
-      <div id="break-label">
-        <p>Break Length</p>
-        <button id="break-decrement" onClick={breakDecrement}>-</button>
-        <p id="break-length">{breakLength}</p>
-        <button id="break-increment" onClick={breakIncrement}>+</button>
+      <div className="header">
+        <h1 className="timer_header">Timer</h1>
       </div>
-      <div id="session-label">
-        <p>Session Length</p>
-        <button id="session-decrement" onClick={sessionDecrement}>-</button>
-        <p id="session-length">{sessionLength}</p>
-        <button id="session-increment" onClick={sessionIncrement}>+</button>
+      <div className="settings">
+        <div id="break-label" className="break-label">
+          <p class="break-label__paragraph">Break Length</p>
+          <button id="break-decrement" onClick={breakDecrement}>-</button>
+          <p id="break-length">{breakLength}</p>
+          <button id="break-increment" onClick={breakIncrement}>+</button>
+        </div>
+        <div id="session-label" className="session-label">
+          <p class="session-label__paragraph">Session Length</p>
+          <button id="session-decrement" onClick={sessionDecrement}>-</button>
+          <p id="session-length">{sessionLength}</p>
+          <button id="session-increment" onClick={sessionIncrement}>+</button>
+        </div>
       </div>
       <div className="timer">
         <div id="timer-label">
