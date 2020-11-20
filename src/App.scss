@@ -17,7 +17,6 @@
 .settings{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -25,7 +24,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-grow: 1;
+
     &__paragraph{
         width: 100%;
         display: flex;
@@ -38,11 +37,77 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-grow: 1;
+
     &__paragraph{
         width: 100%;
         display: flex;
         justify-content: center;
         font-weight: 700;
+    }
+}
+
+.timer{
+    &__paragraph{
+        font-weight: 700;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.timer-label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.time-left{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    background-color: #7f8fa6;
+    color: #192a56;
+    font-size: 2rem;
+    margin: 0px 15px;
+    padding: 0 20px;
+    outline: none;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    transition: background-color, color, .5s;
+}
+
+.btn:hover{
+    background-color: #192a56;
+    color: #7f8fa6;
+}
+
+.icon{
+    font-size: 2rem;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.reset-icon{
+    transition: .5s;
+}
+
+.reset-icon:hover{
+    transform: rotate(180deg);
+}
+
+
+
+@media (min-width: 1px) and (max-width: 500px) {
+    .App{
+        width: 320px;
+    }
+    .btn{
+        margin: 0 5px;
+        padding: 0 10px;
     }
 }
