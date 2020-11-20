@@ -124,7 +124,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1 className="timer_header">Timer Wersja zaawansowana</h1>
+        <h1 className="timer_header">Timer</h1>
       </div>
       <div className="settings">
         <div id="break-label" className="break-label">
