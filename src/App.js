@@ -120,11 +120,11 @@ function App() {
   useEffect(()=>{
     hoveredStart ? setName(start ? "fas fa-pause-circle" : "fas fa-play-circle") : setName(start ? "far fa-pause-circle" : " far fa-play-circle")
   },[hoveredStart,start])
-  
+
   return (
     <div className="App">
       <div className="header">
-        <h1 className="timer_header">Timer</h1>
+        <h1 className="timer_header">Timer FreeCodeCamp</h1>
       </div>
       <div className="settings">
         <div id="break-label" className="break-label">
