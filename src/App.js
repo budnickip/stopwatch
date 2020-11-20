@@ -23,6 +23,9 @@ function App() {
     setTimer(sessionLength*60)
     setStart(false)
     setBreakTime(false)
+    var audio = document.getElementById("beep")
+    audio.pause();
+    audio.currentTime = 0;
   }
 
 
@@ -97,6 +100,13 @@ function App() {
     }
   }, [breakTime])
 
+  useEffect(()=>{
+    if(timer === 0){
+      var audio = document.getElementById("beep")
+      audio.play()
+    }
+  }, [timer])
+
  /* useEffect(()=>{
     clearInterval(interval)
   },[reset]) */
@@ -122,6 +132,7 @@ function App() {
         <div id="time-left">
             {showTime()}
         </div>
+        <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"/>
         <button id="start_stop" onClick={handleStart}>Start_Stop</button>
         <button id="reset" onClick={reset}>reset</button>
       </div>
