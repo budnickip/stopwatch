@@ -13,9 +13,15 @@ function App() {
   return (
     <div className="App">
         <Router>
-          <div>
-          <Link to="/timer">Timer</Link>
-          <Link to="/stoper">Stoper</Link>
+          <div className="nav">
+          <ul className="nav__list">
+            <li className="nav__item">
+              <Link className="nav__link" to="/timer">Timer</Link>
+            </li>
+            <li className="nav__item">
+              <Link className="nav__link" to="/stoper">Stoper</Link>
+            </li>
+          </ul>
           <Switch>
             <Route path="/timer">
               <Timer />
