@@ -15,12 +15,12 @@ function App() {
         <Router>
           <div>
           <Link to="/timer">Timer</Link>
-          <Link to="/stopwatch">Stoper</Link>
+          <Link to="/stoper">Stoper</Link>
           <Switch>
             <Route path="/timer">
               <Timer />
             </Route>
-            <Route path="/stopwatch">
+            <Route path="/stoper">
               <StopWatch />
             </Route>
             <Route path="/">
