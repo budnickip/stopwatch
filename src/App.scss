@@ -171,7 +171,19 @@
       } */
 }
 
+.stopwatch{
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
 
+.time{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 @media (min-width: 1px) and (max-width: 500px) {
     .App{
