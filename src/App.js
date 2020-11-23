@@ -1,7 +1,7 @@
 import './App.scss';
 import React from "react"
 import Timer from './containers/Timer'
-//import StopWatch from './containers/StopWatch'
+import StopWatch from './containers/StopWatch'
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,21 +16,18 @@ function App() {
           <div className="nav">
           <ul className="nav__list">
             <li className="nav__item">
-              <Link className="nav__link" to="/timer">Timer</Link>
+              <Link className="nav__link" to="/">Timer</Link>
             </li>
             <li className="nav__item">
               <Link className="nav__link" to="/stoper">Stoper</Link>
             </li>
           </ul>
           <Switch>
-            <Route path="/timer">
+            <Route exact={true} path="/">
               <Timer />
             </Route>
             <Route path="/stoper">
               <StopWatch />
-            </Route>
-            <Route path="/">
-              <Timer />
             </Route>
           </Switch>
           </div>
@@ -40,12 +37,5 @@ function App() {
   );
 }
 
-function StopWatch() {
-  return(
-      <div className="stop-watch">
-          Tutaj będzie stoper
-      </div>
-  )
-}
 
 export default App;
