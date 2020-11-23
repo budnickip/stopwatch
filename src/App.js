@@ -12,7 +12,10 @@ import {
 function App() {
   return (
     <div className="App">
-        <Router>
+      {/*na github pages oraz przy odpalaniu aplikacji domyślną ścieżką jest nazwa folderu stopwatch, czyli
+      link/stopwatch - dodając basename stopwatch, jak kliknę na stoper to będzie ścieżka stopwatch/stoper, a jak nie kliknę to otworzy
+      się Timer. */}
+        <Router basename="/stopwatch">
           <div className="nav">
           <ul className="nav__list">
             <li className="nav__item">
