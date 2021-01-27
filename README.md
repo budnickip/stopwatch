@@ -1,5 +1,6 @@
 # Timer w dwóch wersjach.
 
+![./.github/images/stopwatch.png](./.github/images/stopwatch.png)
 
 ### Wersja rozszerzona:
 
